@@ -9,10 +9,10 @@ Currently provided: `asDefaultProps` and `asPropTypes`.  Example:
     import { asDefaultProps, asPropTypes } from "./index";
 
     class MyComponentClass extends React.Component<{name: string}> {
-        static defaultProps = asDefaultProps(MyComponent)({
+        static defaultProps = asDefaultProps(MyComponentClass)({
             name: "Matt"
         });
-        static propTypes = asPropTypes(MyComponent)({
+        static propTypes = asPropTypes(MyComponentClass)({
             name: PropTypes.string.isRequired
         });
     }

@@ -20,7 +20,7 @@ export type LooseComponentType<P> =
  *    import { asDefaultProps } from "react-typescript-helpers";
  *
  *    class MyComponentClass extends React.Component<{name: string}, {}> {
- *        static defaultProps = asDefaultProps(MyComponent)({
+ *        static defaultProps = asDefaultProps(MyComponentClass)({
  *            name: "Matt"
  *        });
  *    }
@@ -41,7 +41,7 @@ export function asDefaultProps<P>(component: LooseComponentType<P>) {
  *    import { asPropTypes } from "react-typescript-helpers";
  *
  *    class MyComponentClass extends React.Component<{name: string}, {}> {
- *        static propTypes = asPropTypes(MyComponent)({
+ *        static propTypes = asPropTypes(MyComponentClass)({
  *            name: PropTypes.string.isRequired
  *        });
  *    }
