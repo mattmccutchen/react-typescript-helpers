@@ -26,8 +26,7 @@ export type LooseComponentType<P> =
  *    }
  */
 export function asDefaultProps<P>(component: LooseComponentType<P>) {
-    return <DP extends React.ComponentType<P>["defaultProps"]>
-        (defaultProps: DP) => defaultProps;
+    return <DP extends Partial<P>>(defaultProps: DP) => defaultProps;
 }
 
 /**
@@ -47,6 +46,5 @@ export function asDefaultProps<P>(component: LooseComponentType<P>) {
  *    }
  */
 export function asPropTypes<P>(component: LooseComponentType<P>) {
-    return <PT extends React.ComponentType<P>["propTypes"]>
-        (propTypes: PT) => propTypes;
+    return <PT extends React.ValidationMap<P>>(propTypes: PT) => propTypes;
 }
